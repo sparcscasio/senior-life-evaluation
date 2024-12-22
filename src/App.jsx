@@ -63,7 +63,7 @@ const App = () => {
           </select>
         </label>
         <label>
-          Temp: 
+          온도 (°C): 
           <input 
             type="number" 
             value={temp} 
@@ -71,7 +71,7 @@ const App = () => {
           />
         </label>
         <label>
-          Prep: 
+          강수량 (mm): 
           <input 
             type="number" 
             value={prep} 
