@@ -7,7 +7,7 @@ const App = () => {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const apiUrl = "https://1a62-34-127-51-119.ngrok-free.app/calc";
+  const apiUrl = "https://2244-34-125-18-251.ngrok-free.app/calc";
 
   const handleCalculate = async () => {
     setLoading(true);
