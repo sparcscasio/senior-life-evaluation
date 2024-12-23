@@ -96,8 +96,8 @@ const App = () => {
           >
             결과:{" "}
             {result === "low" ? "안전" :
-              result === "soso" ? "안전" :
-              result === "high" ? "보통" :
+              result === "soso" ? "보통" :
+              result === "high" ? "위험" :
               result === "very high" ? "위험" :
               result}
           </h2>
