@@ -7,7 +7,7 @@ const App = () => {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const apiUrl = "https://fdd2-34-127-51-119.ngrok-free.app/calc";
+  const apiUrl = "https://1a62-34-127-51-119.ngrok-free.app/calc";
 
   const handleCalculate = async () => {
     setLoading(true);
@@ -24,7 +24,15 @@ const App = () => {
       // JSON 파싱 시도
       const data = JSON.parse(textResponse);
       console.log(data);
-      setResult(data.result);
+      if (data.result <= 0.33) {
+        setResult("low");
+      } else {
+        if (data.result <= 0.40) {
+          setResult("soso");
+        } else {
+          setResult("high");
+        }
+      }
     } catch (error) {
       console.error("Error calling the API:", error);
     } finally {
@@ -98,7 +106,6 @@ const App = () => {
             {result === "low" ? "안전" :
               result === "soso" ? "보통" :
               result === "high" ? "위험" :
-              result === "very high" ? "위험" :
               result}
           </h2>
         </div>
