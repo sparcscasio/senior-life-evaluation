@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [green, setGreen] = useState(0);
-  const [temp, setTemp] = useState(0);
-  const [prep, setPrep] = useState(0);
-  const [result, setResult] = useState(null);
+  const [vision, setVision] = useState(null);
+  const [auditory, setAuditory] = useState(null);
+  const [physical, setPhysical] = useState(null);
+  const [self_, setSelf] = useState(null);
+  const [communication, setCommunication] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null);
 
-  const apiUrl = "https://2244-34-125-18-251.ngrok-free.app/calc";
+  const apiUrl = "https://706a-34-173-86-218.ngrok-free.app/calc";
 
   const handleCalculate = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${apiUrl}?green=${green}&temp=${temp}&prep=${prep}`, {
+      const response = await fetch(`${apiUrl}?vision=${vision}&auditory=${auditory}&physical=${physical}&self=${self_}&communication=${communication}`, {
         headers: {
           'ngrok-skip-browser-warning': 'true'  // ngrok 경고 페이지를 생략
         }
@@ -24,15 +26,7 @@ const App = () => {
       // JSON 파싱 시도
       const data = JSON.parse(textResponse);
       console.log(data);
-      if (data.result <= 0.33) {
-        setResult("low");
-      } else {
-        if (data.result <= 0.40) {
-          setResult("soso");
-        } else {
-          setResult("high");
-        }
-      }
+      setResult(data.result);
     } catch (error) {
       console.error("Error calling the API:", error);
     } finally {
@@ -43,47 +37,46 @@ const App = () => {
 
   return (
     <div>
-      <h1>온열환자 발생 위험도 예측</h1>
+      <h1>노인의 삶의 질 예측</h1>
       <div>
         <label>
-          지역 선택: 
-          <select 
-            value={green} 
-            onChange={(e) => setGreen(e.target.value)} 
-          >
-            <option value="38.60">서울</option>
-            <option value="57.76">부산</option>
-            <option value="77.40">대구</option>
-            <option value="56.83">인천</option>
-            <option value="74.31">광주</option>
-            <option value="80.49">대전</option>
-            <option value="76.03">울산</option>
-            <option value="68.69">세종</option>
-            <option value="75.82">경기</option>
-            <option value="78.95">강원</option>
-            <option value="74.99">충북</option>
-            <option value="63.08">충남</option>
-            <option value="67.77">전북</option>
-            <option value="70.97">전남</option>
-            <option value="73.11">경북</option>
-            <option value="73.00">경남</option>
-            <option value="82.59">제주</option>
-          </select>
-        </label>
-        <label>
-          온도 (°C): 
+          시각적 제약: 
           <input 
             type="number" 
-            value={temp} 
-            onChange={(e) => setTemp(e.target.value)} 
+            value={vision} 
+            onChange={(e) => setVision(e.vision.value)} 
           />
         </label>
         <label>
-          강수량 (mm): 
+          신체적 제약: 
           <input 
             type="number" 
-            value={prep} 
-            onChange={(e) => setPrep(e.target.value)} 
+            value={physical} 
+            onChange={(e) => setPhysical(e.physical.value)} 
+          />
+        </label>
+        <label>
+          청각적 제약: 
+          <input 
+            type="number" 
+            value={auditory} 
+            onChange={(e) => setAuditory(e.auditory.value)} 
+          />
+        </label>
+        <label>
+          자기 관리 제약: 
+          <input 
+            type="number" 
+            value={self_} 
+            onChange={(e) => setSelf(e.self_.value)} 
+          />
+        </label>
+        <label>
+          의사소통 제약: 
+          <input 
+            type="number" 
+            value={communication} 
+            onChange={(e) => setCommunication(e.communication.value)} 
           />
         </label>
         <button onClick={handleCalculate} disabled={loading}>
@@ -93,20 +86,9 @@ const App = () => {
 
       {result !== null && (
         <div>
-          <h2
-          style={{
-            color: result === "low" ? "green" :
-                   result === "soso" ? "green" :
-                   result == "high" ? "orange" :
-                   result == "very high" ? "red" :
-                   "black"
-          }}
-          >
+          <h2>
             결과:{" "}
-            {result === "low" ? "안전" :
-              result === "soso" ? "보통" :
-              result === "high" ? "위험" :
-              result}
+            {result}
           </h2>
         </div>
       )}
