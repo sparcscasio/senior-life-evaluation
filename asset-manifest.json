@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/heat-exhaustion/static/css/main.e6c13ad2.css",
-    "main.js": "/heat-exhaustion/static/js/main.c256f7dc.js",
-    "static/js/488.9c92ff38.chunk.js": "/heat-exhaustion/static/js/488.9c92ff38.chunk.js",
-    "index.html": "/heat-exhaustion/index.html",
-    "main.e6c13ad2.css.map": "/heat-exhaustion/static/css/main.e6c13ad2.css.map",
-    "main.c256f7dc.js.map": "/heat-exhaustion/static/js/main.c256f7dc.js.map",
-    "488.9c92ff38.chunk.js.map": "/heat-exhaustion/static/js/488.9c92ff38.chunk.js.map"
+    "main.css": "/senior-life-evaluation/static/css/main.e6c13ad2.css",
+    "main.js": "/senior-life-evaluation/static/js/main.7099cc5c.js",
+    "static/js/488.9c92ff38.chunk.js": "/senior-life-evaluation/static/js/488.9c92ff38.chunk.js",
+    "index.html": "/senior-life-evaluation/index.html",
+    "main.e6c13ad2.css.map": "/senior-life-evaluation/static/css/main.e6c13ad2.css.map",
+    "main.7099cc5c.js.map": "/senior-life-evaluation/static/js/main.7099cc5c.js.map",
+    "488.9c92ff38.chunk.js.map": "/senior-life-evaluation/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.c256f7dc.js"
+    "static/js/main.7099cc5c.js"
   ]
 }
