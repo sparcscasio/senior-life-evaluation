@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/heat-exhaustion/static/css/main.e6c13ad2.css",
+    "main.js": "/heat-exhaustion/static/js/main.9463a2b6.js",
+    "static/js/488.9c92ff38.chunk.js": "/heat-exhaustion/static/js/488.9c92ff38.chunk.js",
+    "index.html": "/heat-exhaustion/index.html",
+    "main.e6c13ad2.css.map": "/heat-exhaustion/static/css/main.e6c13ad2.css.map",
+    "main.9463a2b6.js.map": "/heat-exhaustion/static/js/main.9463a2b6.js.map",
+    "488.9c92ff38.chunk.js.map": "/heat-exhaustion/static/js/488.9c92ff38.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.9463a2b6.js"
+  ]
+}
